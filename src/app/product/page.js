@@ -97,7 +97,7 @@ export default function ProductPage() {
             </p>
             <div className={styles.heroCtas}>
               <Button href="/demo" variant="primary" size="lg">Request a Demo</Button>
-              <Button href="/how-it-works" variant="secondary" size="lg">How It Works</Button>
+              <Button href="/how-it-works" variant="outline-white" size="lg">How It Works</Button>
             </div>
           </div>
         </div>
