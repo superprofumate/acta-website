@@ -1,0 +1,47 @@
+@use '@/styles/variables' as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  &--center {
+    text-align: center;
+    align-items: center;
+  }
+
+  &--left {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.label {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0;
+}
+
+.headline {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-snug;
+  letter-spacing: -0.01em;
+  color: $color-primary;
+  margin: 0;
+
+  .header--dark & { color: #fff; }
+}
+
+.subheadline {
+  font-size: $font-size-body;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  max-width: 680px;
+  margin: 0;
+
+  .header--dark & { color: rgba(255, 255, 255, 0.70); }
+}

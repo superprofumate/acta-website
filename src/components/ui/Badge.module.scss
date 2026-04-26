@@ -1,0 +1,61 @@
+@use 'sass:color';
+@use '@/styles/variables' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: $radius-full;
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.badge--default {
+  background: rgba($color-primary, 0.08);
+  color: $color-primary;
+}
+
+.badge--accent {
+  background: rgba($color-accent, 0.15);
+  color: color.adjust($color-accent, $lightness: -15%);
+}
+
+.badge--high {
+  background: rgba($color-high-risk, 0.12);
+  color: $color-high-risk;
+}
+
+.badge--medium {
+  background: rgba($color-medium-risk, 0.15);
+  color: color.adjust($color-medium-risk, $lightness: -10%);
+}
+
+.badge--low {
+  background: rgba($color-low-risk, 0.12);
+  color: color.adjust($color-low-risk, $lightness: -15%);
+}
+
+.badge--opportunity {
+  background: rgba($color-opportunity, 0.12);
+  color: $color-opportunity;
+}
+
+.badge--urgent {
+  background: rgba($color-urgent, 0.12);
+  color: $color-urgent;
+}
+
+.badge--dark {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.badge--gold {
+  background: rgba($color-accent, 0.20);
+  color: $color-accent;
+}

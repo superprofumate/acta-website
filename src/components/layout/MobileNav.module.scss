@@ -1,0 +1,98 @@
+@use 'sass:color';
+@use '@/styles/variables' as *;
+
+.wrapper {
+  display: none;
+
+  @media (max-width: 768px) { display: block; }
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: $space-2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  transition: background $transition-fast;
+
+  &:hover { background: rgba($color-primary, 0.06); }
+  &:focus-visible { outline: 2px solid $color-accent; }
+}
+
+.bar {
+  display: block;
+  height: 1.5px;
+  width: 22px;
+  background: $color-primary;
+  border-radius: 2px;
+  transition: transform $transition-base, opacity $transition-base;
+  transform-origin: center;
+}
+
+.bar--top-open  { transform: translateY(6.5px) rotate(45deg); }
+.bar--mid-open  { opacity: 0; transform: scaleX(0); }
+.bar--bot-open  { transform: translateY(-6.5px) rotate(-45deg); }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  top: $header-height;
+  background: $color-background;
+  z-index: 99;
+  overflow-y: auto;
+  padding: $space-8 $space-5;
+  animation: slide-in 0.2s ease;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav { display: flex; flex-direction: column; gap: $space-8; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  display: block;
+  padding: $space-4 $space-4;
+  font-size: 1.125rem;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background $transition-fast;
+
+  &:hover { background: rgba($color-primary, 0.06); }
+}
+
+.mobileCtaWrapper { padding-top: $space-4; border-top: $border; }
+
+.mobileCta {
+  display: block;
+  width: 100%;
+  padding: $space-4;
+  text-align: center;
+  background: $color-accent;
+  color: #fff;
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background $transition-fast;
+
+  &:hover { background: color.adjust($color-accent, $lightness: -8%); }
+}

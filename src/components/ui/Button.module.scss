@@ -1,0 +1,108 @@
+@use 'sass:color';
+@use '@/styles/variables' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  border: none;
+  cursor: pointer;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all $transition-base;
+  border-radius: $radius-md;
+  line-height: 1;
+
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Variants
+.btn--primary {
+  background: $color-accent;
+  color: #fff;
+  border: 1.5px solid $color-accent;
+
+  &:hover:not(:disabled) {
+    background: color.adjust($color-accent, $lightness: -8%);
+    border-color: color.adjust($color-accent, $lightness: -8%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active:not(:disabled) { transform: translateY(0); }
+}
+
+.btn--secondary {
+  background: transparent;
+  color: $color-primary;
+  border: 1.5px solid $color-border;
+
+  &:hover:not(:disabled) {
+    border-color: $color-primary;
+    background: rgba($color-primary, 0.05);
+  }
+}
+
+.btn--navy {
+  background: $color-primary;
+  color: #fff;
+  border: 1.5px solid $color-primary;
+
+  &:hover:not(:disabled) {
+    background: color.adjust($color-primary, $lightness: 8%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: $color-primary;
+  border: 1.5px solid transparent;
+
+  &:hover:not(:disabled) {
+    background: rgba($color-primary, 0.06);
+    border-color: $color-border;
+  }
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+// Sizes
+.btn--sm {
+  font-size: $font-size-xs;
+  padding: 8px 18px;
+  border-radius: $radius-sm;
+}
+
+.btn--md {
+  font-size: $font-size-sm;
+  padding: 14px 28px;
+}
+
+.btn--lg {
+  font-size: $font-size-body;
+  padding: 16px 36px;
+  border-radius: $radius-lg;
+}

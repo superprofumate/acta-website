@@ -1,0 +1,16 @@
+@use '@/styles/variables' as *;
+
+.section {
+  background: $color-surface;
+  padding-block: $section-padding-v;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-5;
+  margin-top: $space-12;
+
+  @media (max-width: 768px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,236 @@
+@use 'variables' as *;
+
+// ─── Breakpoints ──────────────────────────────────────────────────────────────
+
+@mixin sm {
+  @media (max-width: #{$breakpoint-sm}) { @content; }
+}
+
+@mixin md {
+  @media (max-width: #{$breakpoint-md}) { @content; }
+}
+
+@mixin lg {
+  @media (max-width: #{$breakpoint-lg}) { @content; }
+}
+
+@mixin xl {
+  @media (max-width: #{$breakpoint-xl}) { @content; }
+}
+
+@mixin above-md {
+  @media (min-width: #{$breakpoint-md + 1px}) { @content; }
+}
+
+@mixin above-lg {
+  @media (min-width: #{$breakpoint-lg + 1px}) { @content; }
+}
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+
+@mixin container {
+  width: 100%;
+  max-width: $content-width;
+  margin-inline: auto;
+  padding-inline: $section-padding-h;
+
+  @include lg {
+    padding-inline: $space-8;
+  }
+
+  @include md {
+    padding-inline: $space-6;
+  }
+
+  @include sm {
+    padding-inline: $space-5;
+  }
+}
+
+@mixin section-spacing {
+  padding-block: $section-padding-v;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin grid-cols($cols, $gap: $space-6) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+
+@mixin heading-1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  letter-spacing: -0.02em;
+  color: $color-text;
+}
+
+@mixin heading-2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-snug;
+  letter-spacing: -0.01em;
+  color: $color-text;
+}
+
+@mixin heading-3 {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-snug;
+  color: $color-text;
+}
+
+@mixin body-text {
+  font-size: $font-size-body;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+}
+
+@mixin label-text {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+}
+
+// ─── Cards ────────────────────────────────────────────────────────────────────
+
+@mixin card-base {
+  background: $color-surface;
+  border: $border;
+  border-radius: $radius-lg;
+  padding: $card-padding;
+  box-shadow: $shadow-md;
+}
+
+@mixin card-hover {
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+    border-color: rgba($color-accent, 0.35);
+  }
+}
+
+// ─── Buttons ──────────────────────────────────────────────────────────────────
+
+@mixin btn-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all $transition-base;
+}
+
+@mixin btn-primary {
+  @include btn-reset;
+  background: $color-accent;
+  color: #fff;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  padding: 14px 28px;
+  border-radius: $radius-md;
+
+  &:hover {
+    background: darken($color-accent, 8%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active { transform: translateY(0); }
+}
+
+@mixin btn-secondary {
+  @include btn-reset;
+  background: transparent;
+  color: $color-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  padding: 13px 28px;
+  border-radius: $radius-md;
+  border: 1.5px solid $color-border;
+
+  &:hover {
+    border-color: $color-primary;
+    background: $color-navy-10;
+  }
+}
+
+@mixin btn-navy {
+  @include btn-reset;
+  background: $color-primary;
+  color: #fff;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  padding: 14px 28px;
+  border-radius: $radius-md;
+
+  &:hover {
+    background: lighten($color-primary, 8%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+}
+
+// ─── Focus styles ─────────────────────────────────────────────────────────────
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 3px;
+  }
+}
+
+// ─── Status badges ────────────────────────────────────────────────────────────
+
+@mixin badge($bg, $color) {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: $radius-full;
+  background: $bg;
+  color: $color;
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+}
+
+// ─── Text truncate ────────────────────────────────────────────────────────────
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

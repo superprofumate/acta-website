@@ -1,0 +1,133 @@
+// ─── ACTA Design Tokens ───────────────────────────────────────────────────────
+
+// Core brand colors
+$color-almond-cream:  #F1E9D5;
+$color-deep-navy:     #2A3765;
+$color-golden-oak:    #C19E66;
+$color-warm-ivory:    #FDFAF4;
+$color-muted-navy:    #6B7A99;
+$color-border:        #E2D9C4;
+$color-dark-navy:     #1A2540;
+$color-deep-dark:     #0D1525;
+$color-navy-mid:      #3D4F7C;
+
+// Status / risk colors
+$color-high-risk:       #C94B32;
+$color-medium-risk:     #E09052;
+$color-low-risk:        #4CAF82;
+$color-urgent:          #C94B32;
+$color-opportunity:     #3D6B9E;
+$color-deadline-soon:   #E09052;
+$color-reviewed:        #4CAF82;
+$color-action-required: $color-golden-oak;
+
+// Semantic aliases
+$color-background:  $color-almond-cream;
+$color-primary:     $color-deep-navy;
+$color-accent:      $color-golden-oak;
+$color-surface:     $color-warm-ivory;
+$color-text:        $color-deep-navy;
+$color-text-muted:  $color-muted-navy;
+
+// Transparency tokens
+$color-navy-10:  rgba(42, 55, 101, 0.08);
+$color-navy-15:  rgba(42, 55, 101, 0.12);
+$color-navy-20:  rgba(42, 55, 101, 0.15);
+$color-gold-10:  rgba(193, 158, 102, 0.10);
+$color-gold-20:  rgba(193, 158, 102, 0.20);
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+
+$font-family-primary: 'Inter', system-ui, -apple-system, sans-serif;
+$font-family-mono:    'Geist Mono', 'JetBrains Mono', monospace;
+
+$font-size-h1:    clamp(2.5rem, 4vw, 3.5rem);   // 56px desktop
+$font-size-h2:    clamp(1.875rem, 3vw, 2.5rem); // 40px desktop
+$font-size-h3:    clamp(1.375rem, 2.5vw, 1.75rem); // 28px
+$font-size-h4:    1.25rem;  // 20px
+$font-size-h5:    1.125rem; // 18px
+$font-size-body:  1rem;     // 16px
+$font-size-sm:    0.875rem; // 14px
+$font-size-xs:    0.8125rem; // 13px
+$font-size-label: 0.6875rem; // 11px
+$font-size-metric: clamp(2.5rem, 4vw, 3.25rem); // 52px
+
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-semibold: 600;
+$font-weight-bold:    700;
+$font-weight-extrabold: 800;
+
+$line-height-tight:  1.1;
+$line-height-snug:   1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.6;
+$line-height-loose:  1.8;
+
+$letter-spacing-label: 0.12em;
+$letter-spacing-wide:  0.04em;
+
+// ─── Spacing ──────────────────────────────────────────────────────────────────
+
+$space-1:   4px;
+$space-2:   8px;
+$space-3:   12px;
+$space-4:   16px;
+$space-5:   20px;
+$space-6:   24px;
+$space-7:   28px;
+$space-8:   32px;
+$space-10:  40px;
+$space-12:  48px;
+$space-16:  64px;
+$space-20:  80px;
+$space-24:  96px;
+$space-30:  120px;
+
+$section-padding-v:  $space-20;
+$section-padding-h:  $space-30;
+$card-padding:       $space-8;
+$card-padding-lg:    40px;
+
+// ─── Borders & Radii ──────────────────────────────────────────────────────────
+
+$radius-sm:    6px;
+$radius-md:    8px;
+$radius-lg:    12px;
+$radius-xl:    16px;
+$radius-2xl:   20px;
+$radius-full:  9999px;
+
+$border-color:  $color-border;
+$border-width:  1px;
+$border-style:  solid;
+$border:        $border-width $border-style $border-color;
+
+// ─── Shadows ──────────────────────────────────────────────────────────────────
+
+$shadow-sm:    0 2px 8px rgba(42, 55, 101, 0.06);
+$shadow-md:    0 4px 16px rgba(42, 55, 101, 0.08);
+$shadow-lg:    0 8px 32px rgba(42, 55, 101, 0.10);
+$shadow-xl:    0 16px 48px rgba(42, 55, 101, 0.12);
+$shadow-hero:  0 24px 64px rgba(13, 26, 51, 0.18);
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+
+$max-width:        1440px;
+$content-width:    1200px;
+$narrow-width:     800px;
+
+$header-height:    72px;
+
+$breakpoint-sm:    480px;
+$breakpoint-md:    768px;
+$breakpoint-lg:    1024px;
+$breakpoint-xl:    1280px;
+$breakpoint-2xl:   1440px;
+
+// ─── Transitions ──────────────────────────────────────────────────────────────
+
+$transition-fast:    150ms ease;
+$transition-base:    250ms ease;
+$transition-slow:    400ms ease;
+$transition-bounce:  300ms cubic-bezier(0.34, 1.56, 0.64, 1);

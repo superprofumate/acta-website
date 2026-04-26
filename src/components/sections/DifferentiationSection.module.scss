@@ -1,0 +1,3 @@
+@use '@/styles/variables' as *;
+.section { background: $color-background; padding-block: $section-padding-v; }
+.table { margin-top: $space-12; }

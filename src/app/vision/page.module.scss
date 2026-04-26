@@ -1,0 +1,213 @@
+@use '@/styles/variables' as *;
+
+.hero {
+  background: $color-primary;
+  padding-block: $space-20;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  max-width: 700px;
+}
+
+.heroLabel {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0;
+}
+
+.heroHeadline {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0;
+}
+
+.heroSub {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+
+.sectionLabel {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0 0 $space-3;
+}
+
+.sectionHeadline {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin: 0 0 $space-10;
+  line-height: $line-height-snug;
+}
+
+.market {
+  background: $color-background;
+  padding-block: $section-padding-v;
+}
+
+.tamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-5;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.tamCard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  padding: $space-8;
+  background: $color-surface;
+  border: $border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+}
+
+.tamValue {
+  font-size: 2.5rem;
+  font-weight: $font-weight-extrabold;
+  color: $color-accent;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.tamLabel {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-primary;
+}
+
+.tamDesc {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.whyNow {
+  background: $color-surface;
+  padding-block: $section-padding-v;
+  border-top: $border;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-5;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.whyCard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-6;
+  background: $color-background;
+  border: $border;
+  border-radius: $radius-lg;
+}
+
+.whyTitle {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin: 0;
+}
+
+.whyDesc {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.traction {
+  background: $color-background;
+  padding-block: $section-padding-v;
+  border-top: $border;
+}
+
+.tractionInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; gap: $space-10; }
+}
+
+.tractionContent, .moatContent { display: flex; flex-direction: column; }
+
+.tractionList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tractionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-3;
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+}
+
+.tractionCheck {
+  color: $color-low-risk;
+  font-weight: $font-weight-bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.moatGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-4;
+
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+}
+
+.moatCard {
+  padding: $space-5;
+  background: $color-surface;
+  border: $border;
+  border-radius: $radius-md;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.moatTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin: 0;
+}
+
+.moatDesc {
+  font-size: $font-size-xs;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin: 0;
+}

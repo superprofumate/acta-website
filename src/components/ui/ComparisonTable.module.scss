@@ -1,0 +1,74 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: $radius-lg;
+  border: $border;
+  box-shadow: $shadow-md;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: $color-surface;
+  min-width: 640px;
+}
+
+/* Scope element selectors under the local .table class so CSS Modules treats them as pure */
+.table thead tr {
+  background: $color-primary;
+}
+
+.table th {
+  padding: $space-4 $space-5;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.capCol {
+  text-align: left;
+  color: rgba(255, 255, 255, 0.55);
+  width: 34%;
+}
+
+.col--acta {
+  color: $color-accent;
+  background: rgba($color-accent, 0.08);
+}
+
+.row {
+  &:not(:last-child) td {
+    border-bottom: 1px solid $color-border;
+  }
+
+  &:hover td { background: rgba($color-primary, 0.03); }
+}
+
+.capability {
+  padding: $space-4 $space-5;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  text-align: left;
+}
+
+.cell {
+  padding: $space-4 $space-5;
+  text-align: center;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  transition: background $transition-fast;
+
+  &--acta {
+    background: rgba($color-accent, 0.05);
+  }
+}
+
+.cell--yes { color: $color-low-risk; }
+.cell--no  { color: $color-border; }

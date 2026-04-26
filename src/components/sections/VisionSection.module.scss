@@ -1,0 +1,56 @@
+@use '@/styles/variables' as *;
+
+.section {
+  background: $color-primary;
+  padding-block: $section-padding-v;
+}
+
+.stages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-5;
+  margin-top: $space-12;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-7;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: $radius-lg;
+  transition: border-color $transition-base;
+
+  &--active {
+    border-color: rgba($color-accent, 0.45);
+    background: rgba($color-accent, 0.06);
+  }
+}
+
+.phase {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+
+  .stage--active & { color: $color-accent; }
+  .stage:not(.stage--active) & { color: rgba(255,255,255,0.35); }
+}
+
+.stageTitle {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-bold;
+  color: #fff;
+  margin: 0;
+  line-height: $line-height-snug;
+}
+
+.stageDesc {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+}

@@ -1,0 +1,155 @@
+@use '@/styles/variables' as *;
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  padding: $space-8 $card-padding;
+  background: $color-surface;
+  border: 1.5px solid $color-border;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &--highlighted {
+    background: $color-primary;
+    border-color: $color-accent;
+    box-shadow: $shadow-xl;
+    transform: scale(1.02);
+
+    @media (max-width: 768px) { transform: none; }
+  }
+
+  &:hover:not(&--highlighted) {
+    transform: translateY(-3px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $color-accent;
+  color: #fff;
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: $radius-full;
+  white-space: nowrap;
+}
+
+.header { display: flex; flex-direction: column; gap: $space-2; }
+
+.name {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin: 0;
+
+  .card--highlighted & { color: $color-accent; }
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: $space-1;
+}
+
+.price {
+  font-size: 2.25rem;
+  font-weight: $font-weight-extrabold;
+  line-height: 1;
+  color: $color-primary;
+  letter-spacing: -0.02em;
+
+  .card--highlighted & { color: #fff; }
+}
+
+.period {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+
+  .card--highlighted & { color: rgba(255,255,255,0.60); }
+}
+
+.description {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  margin: 0;
+
+  .card--highlighted & { color: rgba(255,255,255,0.65); }
+}
+
+.limit {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  margin: 0;
+
+  .card--highlighted & { color: rgba(255,255,255,0.55); }
+}
+
+.divider {
+  height: 1px;
+  background: $color-border;
+
+  .card--highlighted & { background: rgba(255,255,255,0.12); }
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-2;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+
+  .card--highlighted & { color: rgba(255,255,255,0.75); }
+
+  &--disabled {
+    opacity: 0.45;
+    .card--highlighted & { opacity: 0.35; }
+  }
+}
+
+.check {
+  color: $color-low-risk;
+  font-weight: $font-weight-bold;
+  flex-shrink: 0;
+  margin-top: 1px;
+
+  .card--highlighted & { color: $color-accent; }
+}
+
+.cross {
+  color: $color-text-muted;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.footer { display: flex; flex-direction: column; gap: $space-3; }
+
+.cta { width: 100%; }
+
+.trial {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  text-align: center;
+  margin: 0;
+
+  .card--highlighted & { color: rgba(255,255,255,0.50); }
+}

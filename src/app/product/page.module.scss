@@ -1,0 +1,300 @@
+@use 'sass:color';
+@use '@/styles/variables' as *;
+
+.hero {
+  background: $color-primary;
+  padding-block: $space-20;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-6;
+  max-width: 640px;
+}
+
+.heroHeadline {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0;
+}
+
+.heroSubheadline {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+
+.heroCtas { display: flex; gap: $space-4; flex-wrap: wrap; }
+
+.features {
+  background: $color-background;
+  padding-block: $space-20;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+  align-items: center;
+  padding-block: $space-16;
+  border-bottom: $border;
+
+  &--reverse { direction: rtl; > * { direction: ltr; } }
+  &:last-child { border-bottom: none; }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: $space-8;
+    padding-block: $space-10;
+  }
+}
+
+.featureContent { display: flex; flex-direction: column; gap: $space-4; }
+
+.featureLabel {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0;
+}
+
+.featureTitle {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin: 0;
+  line-height: $line-height-snug;
+}
+
+.featureDesc {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.featureVisual { width: 100%; }
+
+// Briefing card
+.briefingCard {
+  background: $color-dark-navy;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: $shadow-xl;
+}
+
+.briefingCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-4 $space-5;
+  background: rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.briefingCardTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: rgba(255,255,255,0.80);
+}
+
+.briefingRow {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: $space-3;
+  padding: $space-4 $space-5;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  align-items: baseline;
+
+  &:last-of-type { border-bottom: none; }
+}
+
+.briefingRowLabel {
+  font-size: 10px;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.30);
+}
+
+.briefingRowValue {
+  font-size: $font-size-xs;
+  color: rgba(255,255,255,0.75);
+  line-height: $line-height-relaxed;
+}
+
+.briefingCardActions {
+  display: flex;
+  gap: $space-2;
+  padding: $space-4 $space-5;
+  background: rgba(0,0,0,0.15);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap;
+}
+
+.briefingBtn {
+  padding: 7px 14px;
+  font-size: 11px;
+  font-weight: $font-weight-semibold;
+  font-family: inherit;
+  border-radius: $radius-sm;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: rgba(255,255,255,0.65);
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover { background: rgba(255,255,255,0.08); color: #fff; }
+
+  &--primary {
+    background: $color-accent;
+    border-color: $color-accent;
+    color: #fff;
+
+    &:hover { background: color.adjust($color-accent, $lightness: -8%); }
+  }
+}
+
+// Table card
+.tableCard {
+  background: $color-surface;
+  border: $border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+}
+
+.tableCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-4 $space-5;
+  background: $color-background;
+  border-bottom: $border;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+}
+
+.tableCardBody { display: flex; flex-direction: column; }
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+  padding: $space-4 $space-5;
+  border-bottom: $border;
+  transition: background $transition-fast;
+
+  &:last-child { border-bottom: none; }
+  &:hover { background: rgba($color-primary, 0.03); }
+}
+
+.clientName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  margin: 0;
+}
+
+.clientRevenue {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.tableRight {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  flex-shrink: 0;
+}
+
+.clientAction {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.riskPill {
+  font-size: 10px;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: $radius-full;
+
+  &--high   { background: rgba($color-high-risk, 0.10); color: $color-high-risk; }
+  &--medium { background: rgba($color-medium-risk, 0.12); color: $color-medium-risk; }
+  &--low    { background: rgba($color-low-risk, 0.10); color: $color-low-risk; }
+}
+
+// Checklist card
+.checklistCard {
+  background: $color-surface;
+  border: $border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+}
+
+.checklistHeader {
+  padding: $space-4 $space-5;
+  background: $color-background;
+  border-bottom: $border;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-4 $space-5;
+  border-bottom: $border;
+  transition: background $transition-fast;
+
+  &:last-child { border-bottom: none; }
+  &:hover { background: rgba($color-primary, 0.03); }
+  &--done { opacity: 0.55; }
+  &--urgent { background: rgba($color-urgent, 0.04); }
+}
+
+.checkMark {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-text-muted;
+  flex-shrink: 0;
+  width: 16px;
+
+  .checkItem--done & { color: $color-low-risk; }
+  .checkItem--urgent & { color: $color-urgent; }
+}
+
+.checkText {
+  font-size: $font-size-xs;
+  color: $color-primary;
+  flex: 1;
+
+  .checkItem--done & { text-decoration: line-through; color: $color-text-muted; }
+}
+
+.checkTag {
+  font-size: 10px;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  flex-shrink: 0;
+
+  .checkItem--urgent & { color: $color-urgent; }
+}

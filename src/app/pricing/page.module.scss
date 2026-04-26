@@ -1,0 +1,150 @@
+@use '@/styles/variables' as *;
+
+.hero {
+  background: $color-background;
+  padding-block: $space-16;
+  border-bottom: $border;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $space-5;
+}
+
+.heroLabel {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0;
+}
+
+.heroHeadline {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  letter-spacing: -0.025em;
+  color: $color-primary;
+  margin: 0;
+}
+
+.heroSub {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: $color-text-muted;
+  margin: 0;
+  max-width: 520px;
+}
+
+.expansion {
+  background: $color-background;
+  padding-block: $section-padding-v;
+  border-top: $border;
+}
+
+.expansionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $space-3;
+  margin-bottom: $space-10;
+}
+
+.expansionLabel {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0;
+}
+
+.expansionHeadline {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin: 0;
+}
+
+.expansionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-5;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.expansionCard {
+  padding: $space-6;
+  background: $color-surface;
+  border: $border;
+  border-radius: $radius-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.expansionTitle {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin: 0;
+}
+
+.expansionDesc {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.faq {
+  background: $color-surface;
+  padding-block: $section-padding-v;
+  border-top: $border;
+}
+
+.faqHeadline {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin: 0 0 $space-10;
+  text-align: center;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-6;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.faqItem {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-6;
+  background: $color-background;
+  border: $border;
+  border-radius: $radius-lg;
+}
+
+.faqQ {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin: 0;
+}
+
+.faqA {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin: 0;
+}

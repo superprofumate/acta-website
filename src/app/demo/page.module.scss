@@ -1,0 +1,184 @@
+@use '@/styles/variables' as *;
+
+.page {
+  min-height: calc(100vh - $header-height);
+  background: $color-primary;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ─── Left column ─────────────────────────────────────────────────────────────
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $space-20 $space-12 $space-20 $space-20;
+  gap: $space-8;
+
+  @media (max-width: $breakpoint-xl) {
+    padding: $space-16 $space-10 $space-16 $space-12;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    padding: $space-16 $space-8;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-12 $space-6;
+  }
+}
+
+.label {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0;
+}
+
+.headline {
+  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0;
+  max-width: 520px;
+}
+
+.sub {
+  font-size: 1rem;
+  line-height: $line-height-relaxed;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  max-width: 460px;
+}
+
+// ─── Expectations block ───────────────────────────────────────────────────────
+
+.expectations {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-6;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: $radius-lg;
+  max-width: 460px;
+  width: 100%;
+
+  @media (max-width: $breakpoint-lg) {
+    max-width: 540px;
+  }
+}
+
+.expectationsTitle {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0;
+}
+
+.expectationsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    font-size: $font-size-sm;
+    line-height: $line-height-relaxed;
+    color: rgba(255, 255, 255, 0.80);
+
+    &::before {
+      content: '✓';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: rgba(76, 175, 130, 0.18);
+      color: $color-low-risk;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+// ─── Quote ────────────────────────────────────────────────────────────────────
+
+.quotes {
+  max-width: 460px;
+  width: 100%;
+}
+
+.quote {
+  margin: 0;
+  padding: $space-5 $space-6;
+  border-left: 3px solid $color-accent;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0 $radius-md $radius-md 0;
+
+  @media (max-width: $breakpoint-lg) {
+    border-left: none;
+    border-top: 3px solid $color-accent;
+    border-radius: 0 0 $radius-md $radius-md;
+    text-align: center;
+  }
+}
+
+.quoteText {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+  margin: 0 0 $space-3;
+}
+
+.quoteAuthor {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-accent;
+  letter-spacing: $letter-spacing-wide;
+  font-style: normal;
+}
+
+// ─── Right column ─────────────────────────────────────────────────────────────
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-16 $space-16 $space-16 $space-10;
+  background: $color-background;
+
+  @media (max-width: $breakpoint-xl) {
+    padding: $space-12 $space-10;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    padding: $space-10 $space-8 $space-16;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-8 $space-4 $space-12;
+  }
+}

@@ -1,0 +1,82 @@
+export const pricingPlans = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    price: '€199',
+    period: '/month',
+    description: 'For independent consultants and small practices.',
+    clientLimit: 'Up to 20 clients',
+    highlighted: false,
+    cta: 'Get Started',
+    features: [
+      'Legislative monitoring (Romania & EU)',
+      'AI impact analysis per regulation',
+      'Client portfolio mapping',
+      'Weekly impact briefings',
+      'Risk scoring & deadline alerts',
+      'Email support',
+    ],
+    notIncluded: [
+      'Real-time instant alerts',
+      'Client communication drafts',
+      'PDF briefing export',
+      'Priority support',
+    ],
+  },
+  {
+    id: 'growth',
+    name: 'Growth',
+    price: '€399',
+    period: '/month',
+    description: 'For established firms managing a mid-size portfolio.',
+    clientLimit: 'Up to 50 clients',
+    highlighted: true,
+    badge: 'Most Popular',
+    cta: 'Start Free Trial',
+    trialNote: '14-day free trial, no credit card required',
+    features: [
+      'Everything in Starter',
+      'Real-time legislative alerts',
+      'AI-generated client communication drafts',
+      'PDF briefing export',
+      'Tax optimization opportunity detection',
+      'Portfolio impact overview',
+      'Priority email & chat support',
+    ],
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise',
+    price: 'Custom',
+    period: '',
+    description: 'Advanced features, integrations, and larger portfolios.',
+    clientLimit: 'Unlimited clients',
+    highlighted: false,
+    cta: 'Contact Sales',
+    features: [
+      'Everything in Growth',
+      'Dedicated account manager',
+      'Custom legislative source integrations',
+      'Multi-firm / team management',
+      'Advanced audit trail & compliance logs',
+      'API access',
+      'SLA guarantee',
+      'On-premise option available',
+    ],
+  },
+];
+
+export const expansionRevenue = [
+  {
+    title: 'Real-Time Alerts',
+    description: 'Instant notifications for high-urgency legislative changes — available as an add-on or included in Growth and above.',
+  },
+  {
+    title: 'Tax Optimization Insights',
+    description: 'Proactive identification of tax optimization opportunities for clients — not just compliance, but value-add advisory.',
+  },
+  {
+    title: 'Automated Client Communication',
+    description: 'AI-drafted client messages and briefings, ready for consultant review and one-click delivery.',
+  },
+];

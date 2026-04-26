@@ -1,0 +1,120 @@
+@use '@/styles/variables' as *;
+
+.hero {
+  background: $color-primary;
+  padding-block: $space-16;
+}
+
+.heroLabel {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0 0 $space-4;
+}
+
+.heroHeadline {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0 0 $space-5;
+}
+
+.heroSub {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  max-width: 600px;
+}
+
+.cases {
+  background: $color-background;
+  padding-block: $section-padding-v;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-6;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  padding: $space-8;
+  background: $color-surface;
+  border: $border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba($color-accent, 0.10);
+  border-radius: $radius-md;
+  font-size: 1.375rem;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin: 0;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  flex: 1;
+}
+
+.field { display: flex; flex-direction: column; gap: $space-1; }
+
+.fieldLabel {
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin: 0;
+}
+
+.fieldText {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.cardFooter {
+  display: flex;
+  gap: $space-2;
+  flex-wrap: wrap;
+  padding-top: $space-4;
+  border-top: $border;
+}

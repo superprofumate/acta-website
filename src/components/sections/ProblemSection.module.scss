@@ -1,0 +1,83 @@
+@use '@/styles/variables' as *;
+
+.section { padding-block: $section-padding-v; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-6;
+  margin-top: $space-12;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-8;
+  background: $color-background;
+  border: $border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+    border-color: rgba($color-accent, 0.30);
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba($color-accent, 0.10);
+  border-radius: $radius-md;
+  font-size: 1.25rem;
+  color: $color-accent;
+}
+
+.cardTitle {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin: 0;
+}
+
+.cardDesc {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.insight {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  margin-top: $space-10;
+  padding: $space-5 $space-6;
+  background: rgba($color-primary, 0.05);
+  border: 1.5px solid rgba($color-accent, 0.25);
+  border-radius: $radius-md;
+  max-width: 740px;
+  margin-inline: auto;
+}
+
+.insightIcon {
+  font-size: 1.25rem;
+  color: $color-accent;
+  flex-shrink: 0;
+}
+
+.insightText {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin: 0;
+  line-height: $line-height-snug;
+}
