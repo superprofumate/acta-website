@@ -2,7 +2,7 @@ export const pricingPlans = [
   {
     id: 'starter',
     name: 'Starter',
-    price: '€199',
+    price: '€150',
     period: '/month',
     description: 'For independent consultants and small practices.',
     clientLimit: 'Up to 20 clients',
@@ -26,7 +26,7 @@ export const pricingPlans = [
   {
     id: 'growth',
     name: 'Growth',
-    price: '€399',
+    price: '€250',
     period: '/month',
     description: 'For established firms managing a mid-size portfolio.',
     clientLimit: 'Up to 50 clients',
